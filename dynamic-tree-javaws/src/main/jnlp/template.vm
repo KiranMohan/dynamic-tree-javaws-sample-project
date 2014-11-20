@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="$encoding"?>
+<jnlp
+    spec="$jnlpspec" codebase="http://localhost:8080/dynamic-tree-webapp" 
+    href="$outputFile">
+  <information>  
+    <title>Dynamic Tree Demo</title>
+    <vendor>Dynamic Team</vendor>
+#if($project.Url)
+    <homepage href="$project.Url"/>
+#end
+#if($project.Description)
+    <description>$project.Description</description>
+#end
+#if($offlineAllowed)
+    <offline-allowed/>
+#end
+  </information>
+  <resources>
+    <j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se" />
+     $dependencies
+     $extensions
+  </resources>
+  <application-desc main-class="$mainClass"/>
+</jnlp>
